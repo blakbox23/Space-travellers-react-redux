@@ -6,15 +6,20 @@ function Header() {
     return (
         <div className="header-section flex">
         <div className="logo">
-            LOGO
+            {/* <img  > */}
+           <span> Space Traveler's Hub </span>
         </div>
         <ul className="nav-links flex">
+        <li>
+                <NavLink to="/">Rockets</NavLink>
+            </li>
             <li>
                 <NavLink to="/missions">Missions</NavLink>
             </li>
             <li>
                 <NavLink to="/profile">My Profile</NavLink>
             </li>
+            
         </ul>
         </div>
     )
