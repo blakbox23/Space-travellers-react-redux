@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 function Header() {
     return (
@@ -7,8 +9,12 @@ function Header() {
             LOGO
         </div>
         <ul className="nav-links flex">
-            <li>Missions</li>
-            <li>My Profile</li>
+            <li>
+                <NavLink to="/missions">Missions</NavLink>
+            </li>
+            <li>
+                <NavLink to="/profile">My Profile</NavLink>
+            </li>
         </ul>
         </div>
     )
