@@ -10,15 +10,15 @@ function App() {
     <div>
       <Header />
       <Switch>
-        <Route exact path = "/">
-      <Rockets />
-      </Route>
-      <Route exact path="/missions">
+        <Route exact path="/">
+          <Rockets />
+        </Route>
+        <Route exact path="/missions">
           <Missions />
-      </Route>
-      <Route exact path="/profile">
+        </Route>
+        <Route exact path="/profile">
           <Profile />
-      </Route>
+        </Route>
       </Switch>
 
     </div>
