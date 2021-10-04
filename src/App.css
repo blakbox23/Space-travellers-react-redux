@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.header-section {
+  border-bottom: 1px solid black;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style-type: none;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
