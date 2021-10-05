@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
-import getMissions from '../redux/api';
+import { getMissions } from '../redux/api';
 
 function Missions() {
   const missions = useSelector((state) => state.missionsState);
