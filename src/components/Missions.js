@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import getMissions from '../redux/api';
-// import Missionitem from './Missionitem';
 
 function Missions() {
   const missions = useSelector((state) => state.missionsState);
@@ -41,7 +41,7 @@ function Missions() {
                 {' '}
               </td>
               <td>
-                Attending
+                <Button variant="outline-dark">Join Mission</Button>
               </td>
             </tr>
           ))}
