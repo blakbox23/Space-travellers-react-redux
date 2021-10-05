@@ -1,17 +1,24 @@
-export const GET_MISSION = 'missionsStore/missionStore/GET_MISSION';
+export const GET_MISSION = 'missions/missionsStore/GET_MISSION';
+const JOIN_MISSION = 'missions/missionsStore/JOIN_MISSION';
 
 const initialState = [];
 
+export const joinMission = (payload) => ({
+  type: JOIN_MISSION,
+  payload,
+});
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    //   case ADD_BOOK:
-    //     return [...state, action.payload];
+    case JOIN_MISSION:
+      state.map((mission) => {
+        if (mission.mission_id !== action.payload) return mission;
+        return { ...mission, reserved: true };
+      });
+      break;
 
     case GET_MISSION:
       return action.newData;
-
-      //   case REMOVE_BOOK:
-      //     return state.filter((book) => book.item_id !== action.payload.item_id);
 
     default:
       return state;

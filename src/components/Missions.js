@@ -4,10 +4,16 @@ import { Table } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import getMissions from '../redux/api';
+import { joinMission } from '../redux/missions/MissionsStore';
 
 function Missions() {
   const missions = useSelector((state) => state.missionsState);
   const dispatch = useDispatch();
+
+  const joinMissionEvent = (payload) => {
+    console.log(`you have selected mission ${payload}`);
+    dispatch(joinMission(payload));
+  };
 
   useEffect(() => {
     dispatch(getMissions());
@@ -41,7 +47,7 @@ function Missions() {
                 {' '}
               </td>
               <td>
-                <Button variant="outline-dark">Join Mission</Button>
+                <Button variant="outline-dark" onClick={joinMissionEvent(mission.mission_id)}>Join Mission</Button>
               </td>
             </tr>
           ))}
