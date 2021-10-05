@@ -1,9 +1,53 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Table } from 'react-bootstrap';
+import Badge from 'react-bootstrap/Badge';
+import getMissions from '../redux/api';
+// import Missionitem from './Missionitem';
 
 function Missions() {
+  const missions = useSelector((state) => state.missionsState);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMissions());
+  }, []);
+
   return (
     <div>
-      This is the missions page
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th width="170">Mission</th>
+            <th width="870">Description</th>
+            <th width="170"> Status </th>
+            <th width="170">..</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>
+                {mission.mission_name}
+              </td>
+              <td>
+                {mission.description}
+              </td>
+              <td>
+                <Badge pill bg="secondary">
+                  Secondary
+                </Badge>
+                {' '}
+              </td>
+              <td>
+                Attending
+              </td>
+            </tr>
+          ))}
+
+        </tbody>
+      </Table>
     </div>
   );
 }
