@@ -11,11 +11,13 @@ function Missions() {
   const dispatch = useDispatch();
 
   const joinMissionEvent = (payload) => {
-    console.log(`you have selected mission ${payload}`);
-    dispatch(joinMission(payload));
+    dispatch(joinMission(missions, payload));
   };
 
   useEffect(() => {
+    if (missions.length > 0) {
+      return;
+    }
     dispatch(getMissions());
   }, []);
 
@@ -47,7 +49,7 @@ function Missions() {
                 {' '}
               </td>
               <td>
-                <Button variant="outline-dark" onClick={joinMissionEvent(mission.mission_id)}>Join Mission</Button>
+                <Button variant="outline-dark" onClick={() => joinMissionEvent(mission.mission_id)}>Join Mission</Button>
               </td>
             </tr>
           ))}

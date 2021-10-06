@@ -15,7 +15,7 @@ const getMissions = () => async (dispatch) => {
       description: item.description,
     });
   });
-  dispatch({ type: GET_MISSION, newData });
+  dispatch({ type: GET_MISSION, formattedData });
 };
 
 export default getMissions;
