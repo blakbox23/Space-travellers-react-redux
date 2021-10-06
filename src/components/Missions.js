@@ -44,10 +44,12 @@ function Missions() {
                 {mission.description}
               </td>
               <td>
-                <Badge pill bg="secondary">
-                  Secondary
-                </Badge>
-                {' '}
+                {!mission.reserved && (
+                <Badge pill bg="secondary"> NOT A MEMBER </Badge>
+                )}
+                {mission.reserved && (
+                <Badge pill bg="primary"> Active Member</Badge>
+                )}
               </td>
               <td>
                 {!mission.reserved && (
