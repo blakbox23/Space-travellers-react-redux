@@ -26,3 +26,8 @@ code {
     'Courier New',
     monospace;
 }
+
+.logo-img {
+  height: 5vh;
+  width: 5vh;
+}
