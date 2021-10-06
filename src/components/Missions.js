@@ -3,11 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
-import { getMissions } from '../redux/api';
+import getMissions from '../redux/api';
+import { joinMission } from '../redux/missions/MissionsStore';
 
 function Missions() {
   const missions = useSelector((state) => state.missionsState);
   const dispatch = useDispatch();
+
+  const joinMissionEvent = (payload) => {
+    dispatch(joinMission(missions, payload));
+  };
 
   useEffect(() => {
     if (missions.length > 0) {
@@ -44,7 +49,7 @@ function Missions() {
                 {' '}
               </td>
               <td>
-                <Button variant="outline-dark">Join Mission</Button>
+                <Button variant="outline-dark" onClick={() => joinMissionEvent(mission.mission_id)}>Join Mission</Button>
               </td>
             </tr>
           ))}
