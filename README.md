@@ -5,6 +5,12 @@
 - Reserve a spot on rocket.
 - Check all the rockets and missons reserved.
 
+  ![rockets](./src/assets/Rockets.png)
+
+  ![missions](./src/assets/Missions.png)
+  
+  ![profile](./src/assets/Profile.png)
+
 ### LiveLink
 [Link](https://sharp-goldberg-87b81e.netlify.app/)
 
