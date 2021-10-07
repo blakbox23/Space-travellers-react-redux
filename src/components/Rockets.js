@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getRockets } from '../redux/api';
 import { joinRocket, leaveRocket } from '../redux/rockets/RocketsStore';
 
-function Rockets() {
+const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rocketsState);
 
@@ -51,6 +51,6 @@ function Rockets() {
       ))}
     </section>
   );
-}
+};
 
 export default Rockets;

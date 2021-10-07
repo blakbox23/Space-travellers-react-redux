@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { Table } from 'react-bootstrap';
 
-function Profile() {
+const Profile = () => {
   const rockets = useSelector((state) => state.rocketsState);
   const allRockets = rockets.filter((rocket) => rocket.reserved);
 
@@ -53,6 +53,6 @@ function Profile() {
       </div>
     </div>
   );
-}
+};
 
 export default Profile;

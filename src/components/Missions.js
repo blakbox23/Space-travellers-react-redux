@@ -5,9 +5,8 @@ import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import { getMissions } from '../redux/api';
 import { joinMission, leaveMission } from '../redux/missions/MissionsStore';
-// import MissionBookingUI from './MissionBookingUI.JS';
 
-function Missions() {
+const Missions = () => {
   const missions = useSelector((state) => state.missionsState);
   const dispatch = useDispatch();
 
@@ -69,6 +68,6 @@ function Missions() {
       </Table>
     </div>
   );
-}
+};
 
 export default Missions;
