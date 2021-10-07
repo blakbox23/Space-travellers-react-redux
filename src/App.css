@@ -21,3 +21,7 @@
 .nav-links li {
   margin-left: 1.5rem;
 }
+
+.mymissions, .myrockets {
+  width: 48%;
+}
