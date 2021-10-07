@@ -1,17 +1,35 @@
 export const GET_ROCKET = 'rocketsStore/rocketStore/GET_ROCKET';
+export const JOIN_ROCKET = 'rocketsStore/rocketStore/JOIN_ROCKET';
+export const LEAVE_ROCKET = 'rocketsStore/rocketStore/LEAVE_ROCKET';
 
 const initialState = [];
 
+export const joinRocket = (state, payload) => (dispatch) => {
+  const newState = state.map((rocket) => {
+    if (rocket.rocket_id !== payload) return rocket;
+    return { ...rocket, reserved: true };
+  });
+  dispatch({ type: JOIN_ROCKET, payload: newState });
+};
+
+export const leaveRocket = (state, payload) => (dispatch) => {
+  const newState = state.map((rocket) => {
+    if (rocket.rocket_id !== payload) return rocket;
+    return { ...rocket, reserved: false };
+  });
+  dispatch({ type: LEAVE_ROCKET, payload: newState });
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    //   case ADD_BOOK:
-    //     return [...state, action.payload];
-
     case GET_ROCKET:
-      return action.newData;
+      return action.formattedData;
 
-      //   case REMOVE_BOOK:
-      //     return state.filter((book) => book.item_id !== action.payload.item_id);
+    case JOIN_ROCKET:
+      return action.payload;
+
+    case LEAVE_ROCKET:
+      return action.payload;
 
     default:
       return state;

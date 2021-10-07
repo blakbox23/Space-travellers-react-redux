@@ -35,7 +35,7 @@ const getRockets = () => async (dispatch) => {
       image: item.flickr_images,
     });
   });
-  dispatch({ type: GET_ROCKET, newData });
+  dispatch({ type: GET_ROCKET, formattedData });
 };
 
 export { getMissions, getRockets };
