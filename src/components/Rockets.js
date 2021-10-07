@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import { getRockets } from '../redux/api';
 import { joinRocket, leaveRocket } from '../redux/rockets/RocketsStore';
 
@@ -38,10 +39,10 @@ function Rockets() {
             <h6>{elem.description}</h6>
             <div>
               {!elem.reserved && (
-              <button type="button" variant="outline-dark" onClick={() => { joinMissionEvent(elem.rocket_id); }}>Join Mission</button>
+              <Button variant="primary" onClick={() => { joinMissionEvent(elem.rocket_id); }}>RESERVE ROCKET</Button>
               )}
               {elem.reserved && (
-                <button type="button" variant="outline-dark" onClick={() => { leaveMissionEvent(elem.rocket_id); }}>Leave Mission</button>
+                <Button primary variant="outline-dark" onClick={() => { leaveMissionEvent(elem.rocket_id); }}>CANCEL RESERVATION</Button>
               )}
             </div>
           </div>
