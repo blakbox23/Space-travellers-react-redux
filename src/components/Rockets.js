@@ -25,6 +25,7 @@ function Rockets() {
 
   return (
     <section>
+      <h2>All Rockets</h2>
       {rockets.map((elem) => (
         <div key={elem.rocket_id} className="d-flex my-4">
           <div>
